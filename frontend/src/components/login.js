@@ -56,7 +56,6 @@ const Login = () => {
                   className="w-[25rem] border-2 border-black rounded-xl p-2"
                 />
               </div>
-
               <div className="mx-12">
                 <br/>
                 <button
@@ -66,6 +65,8 @@ const Login = () => {
                 >
                   Log In
                 </button>
+                <br/>
+
                 {error && <div className="error">{error}</div>}
               </div>
 
