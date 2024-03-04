@@ -3,12 +3,30 @@ import { FaUsers } from "react-icons/fa6";
 import { LiaBalanceScaleSolid } from "react-icons/lia";
 import { VscFeedback } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import "../../css/admin-sidebar.css";
+
+const open = () => {
+  document.getElementById("sidebar").style.width = "320px";
+};
+
+const close = () => {
+  document.getElementById("sidebar").style.width = "0";
+};
 
 function Sidebar() {
   return (
     <>
-      <div className="w-[20vw] bg-gray-700 h-screen p-5">
-        <div className="my-5 text-white">
+      <div className="p-5 shadow-md rounded-full cursor-pointer" onClick={open}>
+        <span>&#9776;</span>
+      </div>
+      <div id="sidebar">
+        <div className="my-5 text-white ">
+          <div className="flex justify-end px-10">
+            <span onClick={close} className="text-2xl">
+              &times;
+            </span>
+          </div>
+
           <h1 className="font-bold text-2xl">Admin Dashboard</h1>
           <br />
           <div className="my-[10rem]"></div>
