@@ -26,7 +26,6 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 import Profile from "./components/signedIn/profile";
 
-
 import Terms from "./components/terms";
 import UserList from "./pages/admin/users";
 import Chat from "./pages/chat/chat";
@@ -39,6 +38,11 @@ import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 import "./css/App.css";
 
 //Login Popup Component
+
+const toggle = () => {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+};
 
 function Header() {
   return (
@@ -63,7 +67,7 @@ function Header() {
           </Link>
 
           {/* Toggle night mode */}
-          <BsMoon className="text-2xl" />
+          <BsMoon className="text-2xl" onClick={toggle} />
         </div>
       </nav>
     </>

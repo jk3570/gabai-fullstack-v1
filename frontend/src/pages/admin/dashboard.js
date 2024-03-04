@@ -12,6 +12,9 @@ import { LiaBalanceScaleSolid } from "react-icons/lia";
 import { VscFeedback } from "react-icons/vsc";
 import { FaRegUser } from "react-icons/fa";
 
+const totalNoStyle =
+  "flex flex-row border-2 rounded-xl h-[8rem] w-[20rem] p-3 justify-between items-center border-black";
+
 function AdminDashboard() {
   const name = "Admin";
   const userCount = 0;
@@ -30,16 +33,16 @@ function AdminDashboard() {
           <AdminSidebar />
         </div>
 
-        <div>
+        <div className="flex flex-col w-full h-screen justify-center align-center ">
           {/* Contents */}
           <div>
             <h1>Welcome, {name}!</h1>
           </div>
 
           {/* Shows the Number of Users, Cases, etc. */}
-          <div className="flex flex-row gap-1 items-center justify-center w-[75vw] text-azure">
+          <div className="flex flex-row gap-1 items-center justify-center self-center w-[75vw]">
             {/* Start */}
-            <div className="flex flex-row border-2 rounded-xl border-azure-400 h-[8rem] w-[20rem] p-3 justify-between items-center">
+            <div className={totalNoStyle}>
               <div>
                 {/* User Count */}
                 Total No. of Users
@@ -53,7 +56,7 @@ function AdminDashboard() {
             {/* End */}
 
             {/* Start */}
-            <div className="flex flex-row border-2 rounded-xl border-azure-400 h-[8rem] w-[20rem] p-3 justify-between items-center">
+            <div className={totalNoStyle}>
               <div>
                 {/* Case Count */}
                 Total No. of Cases
@@ -67,7 +70,7 @@ function AdminDashboard() {
             {/* End */}
 
             {/* Start */}
-            <div className="flex flex-row border-2 rounded-xl border-azure-400 h-[8rem] w-[20rem] p-3 justify-between items-center">
+            <div className={totalNoStyle}>
               <div>
                 {/* Feedback Count */}
                 Total No. of Feedback
