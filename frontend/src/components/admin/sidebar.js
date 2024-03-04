@@ -16,8 +16,11 @@ const close = () => {
 function Sidebar() {
   return (
     <>
-      <div className="p-5 shadow-md rounded-full cursor-pointer" onClick={open}>
-        <span>&#9776;</span>
+      <div
+        className="p-5 shadow-md rounded-xl border-2 cursor-pointer flex flex-col items-center justify-center"
+        onClick={open}
+      >
+        &#9776;
       </div>
       <div id="sidebar">
         <div className="my-5 text-white ">

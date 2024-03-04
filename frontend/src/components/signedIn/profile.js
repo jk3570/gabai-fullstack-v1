@@ -1,11 +1,16 @@
 import Popup from "reactjs-popup";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import ProfileSettings from "./ProfileSettings";
 
 const Profile = () => {
   const backdrop =
     "fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 backdrop-filter backdrop-blur-lg bg-opacity-25 bg-black ";
   const bg =
     "modal h-[28rem] w-[31.25rem] rounded-2xl bg-white flex flex-col mx-10 p-3";
+
+  const btnRed = "bg-red-500 text-white p-2 w-full rounded-xl";
+
+  const btnBlue = "bg-azure-500 text-white p-2 w-full rounded-xl";
 
   const closeBtn = "flex flex-row align-center justify-end p-1 ";
   return (
@@ -37,9 +42,9 @@ const Profile = () => {
               </div>
               <br />
               <div className="flex flex-col items-center justify-center">
-                <button className="bg-red-500 text-white p-2 w-full rounded-xl">
-                  Log Out
-                </button>
+                <ProfileSettings></ProfileSettings>
+                <br />
+                <button className={btnRed}>Log Out</button>
               </div>
             </div>
           </div>
