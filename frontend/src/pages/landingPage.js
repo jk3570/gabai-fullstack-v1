@@ -24,25 +24,27 @@ function LandingPage() {
       <Helmet>
         <title>GabAI</title>
       </Helmet>
-      <section>
-        {/* 1st section of landing page */}
-        <Sect1 />
-      </section>
+        <div class="w-full relative max-w-4xl px-5 lg:px-0 ">
+          <section>
+            {/* 1st section of landing page */}
+            <Sect1 />
+          </section>
 
-      <section>
-        {/* 2nd section of landing page */}
-        <Sect2 />
-      </section>
+          <section>
+            {/* 2nd section of landing page */}
+            <Sect2 />
+          </section>
 
-      <section>
-        {/* 3rd section of landing page */}
-        <Sect3 />
-      </section>
+          <section>
+            {/* 3rd section of landing page */}
+            <Sect3 />
+          </section>
 
-      <section>
-        {/* 4th section of landing page */}
-        <Sect4 />
-      </section>
+          <section>
+            {/* 4th section of landing page */}
+            <Sect4 />
+          </section>
+          </div>
 {/* 
       Logout button */}
       {user && (

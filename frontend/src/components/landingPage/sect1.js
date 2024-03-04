@@ -3,15 +3,12 @@ import Law from "../../img/Law.png";
 const WorkplaceDiscriminationLaws = () => {
   return (
     <div
-      className="p-8 mx-[10rem] flex flex-col justify-center items-center h-screen
-        max-md:p-1"
+      className="flex flex-col justify-center h-screen max-md:p-1"
     >
-      <div
-        className="
-      flex flex-row justify-between items-center gap-x-20
-      max-md:flex-col-reverse
-      "
+      <div 
+      className="flex flex-row justify-between items-center gap-x-20 max-md:flex-col-reverse"
       >
+
         <div>
           
           <h1
