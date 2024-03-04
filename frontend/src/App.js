@@ -41,13 +41,20 @@ import "./css/App.css";
 //Login Popup Component
 
 function Header() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <>
       {/* Navigation Bar  */}
-      <nav className="h-[3.875rem] w-full px-[1.25rem] font-bold border-b-2 border-azure-500">
+      <nav className="sticky top-0 z-50 bg-white h-[3.875rem] w-full px-[1.25rem] font-bold border-b-2 border-azure-500">
         {/* Brand Name */}
         <Link to="/">
-          <div className="">
+          <div onClick={scrollToTop} className="">
             <img src={Logo} alt="Logo" style={{ height: "25px" }} />
           </div>
         </Link>
