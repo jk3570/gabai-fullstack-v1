@@ -25,6 +25,7 @@ import Search from "./pages/search/search";
 import Login from "./components/login";
 import Signup from "./components/signup";
 import Profile from "./components/signedIn/profile";
+import Navbar from "./components/navbar";
 
 import Terms from "./components/terms";
 import UserList from "./pages/admin/users";
@@ -44,36 +45,6 @@ const toggle = () => {
   element.classList.toggle("dark-mode");
 };
 
-function Header() {
-  return (
-    <>
-      {/* Navigation Bar  */}
-      <nav className="h-[3.875rem] w-full px-[1.25rem] font-bold border-b-2 border-azure-500">
-        {/* Brand Name */}
-        <Link to="/">
-          <div className="">
-            <img src={Logo} alt="Logo" style={{ height: "25px" }} />
-          </div>
-        </Link>
-
-        {/* Search Bar */}
-        <div className="flex flex-row items-center text-md gap-x-5">
-          {/* Login Btn */}
-          <Login />
-
-          {/* Search Icon */}
-          <Link to="/search">
-            <FaSearch className="text-2xl" />
-          </Link>
-
-          {/* Toggle night mode */}
-          <BsMoon className="text-2xl" onClick={toggle} />
-        </div>
-      </nav>
-    </>
-  );
-}
-
 const App = () => {
   const { user } = useAuthContext();
   return (
@@ -83,7 +54,7 @@ const App = () => {
       </Helmet>
 
       <BrowserRouter>
-        <Header />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
