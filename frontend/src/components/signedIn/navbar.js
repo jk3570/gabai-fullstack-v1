@@ -1,18 +1,19 @@
 //CSS
-import "../css/nav.css";
+import "../../css/nav.css";
 
 import { useState, useEffect } from "react";
 
 //Images and Icons
 import { Link } from "react-router-dom";
-import Logo from "../img/Logo.png";
+import Logo from "../../img/Logo.png";
 import { BsMoon } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 
 // Components
 // import SignIn from "./SignIn";
-import SideNav from "./SideNav";
-import Login from "./login";
+import SideNav from "../SideNav";
+import Login from "../login";
+import Profile from "./profile";
 
 const toggle = () => {
   var element = document.body;
@@ -81,7 +82,7 @@ function Header() {
           {/* Search Bar */}
           <div className="flex flex-row items-center text-md gap-x-5">
             {/* Login Btn */}
-            <Login />
+            <Profile />
 
             {/* Search Icon */}
             <Link to="/search">

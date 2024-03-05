@@ -1,103 +1,63 @@
 import React from "react";
-import { useAuthContext } from "./hooks/useAuthContext";
-
-//import { useAuthContext } from './hooks/useAuthContext'
-
-//Modules
-import Helmet from "react-helmet";
-
-//icons
-import { BsMoon } from "react-icons/bs";
-import { FaSearch } from "react-icons/fa";
-
-//images
-import Logo from "./img/Logo.png";
-
-//Components and Pages
-import "./css/nav.css";
-import Admin from "./pages/admin/dashboard";
-import CasesList from "./pages/admin/cases";
-import FeedbacksList from "./pages/admin/feedbacks";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
+import Navbar from "./components/navbar";
+import SignedInNavbar from "./components/signedIn/navbar";
 import Footer from "./components/footer";
-import LandingPage from "./pages/landingPage";
-import Results from "./pages/search/results";
-import Search from "./pages/search/search";
+import Home from "./pages/landingPage";
 import Login from "./components/login";
 import Signup from "./components/signup";
-import Profile from "./components/signedIn/profile";
-import Navbar from "./components/navbar";
-
+import Search from "./pages/search/search";
+import Results from "./pages/search/results";
 import Terms from "./components/terms";
+import Admin from "./pages/admin/dashboard";
 import UserList from "./pages/admin/users";
+import CasesList from "./pages/admin/cases";
+import FeedbacksList from "./pages/admin/feedbacks";
 import Chat from "./pages/chat/chat";
 import Testing from "./pages/testing/testing";
-
-//Modules
-import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
-
-//CSS
-import "./css/App.css";
-
-//Login Popup Component
-
-const toggle = () => {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-};
+import Profile from "./components/signedIn/profile";
+import SignedIn from "./pages/signedIn/landingPage";
 
 const App = () => {
-  const { user } = useAuthContext();
   return (
-    <>
-      <Helmet>
-        <title>GabAI</title>
-      </Helmet>
-
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-          {/*  Landing Page Route  
-                <Route path="/" element={<Home />} />
-              */}
-
-          {/* Search Route */}
-          <Route path="/search" element={<Search />} />
-          <Route path="/searchResults" element={<Results />} />
-          <Route path="ToC" element={<Terms />} />
-          {/*  Admin Page Route  */}
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/users" element={<UserList />} />
-          <Route path="/admin/cases" element={<CasesList />} />
-          <Route path="/admin/feedbacks" element={<FeedbacksList />} />
-          {/* Chat Interface */}
-          <Route path="/chat" element={<Chat />} />
-          {/* Testing Route for testing components */}
-          <Route path="/testing" element={<Testing />} />
-          {/* Testing Route for testing components */}
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <NavbarOrSignedInNavbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/searchResults" element={<Results />} />
+        <Route path="ToC" element={<Terms />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/users" element={<UserList />} />
+        <Route path="/admin/cases" element={<CasesList />} />
+        <Route path="/admin/feedbacks" element={<FeedbacksList />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/testing" element={<Testing />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/signed-in" element={<SignedIn />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 
-const Home = () => {
-  return (
-    <>
-      {/* Main Content */}
-      <div className="flex flex-col">
-        {/* Landing Page here!!! */}
-        <div className="flex flex-col items-center justify-center">
-          <LandingPage />
-        </div>
-      </div>
-    </>
-  );
+const NavbarOrSignedInNavbar = () => {
+  const location = useLocation();
+
+  // Check if the current route is '/signed-in', then render SignedInNavbar, otherwise render Navbar
+  if (location.pathname === "/signed-in") {
+    return <SignedInNavbar />;
+  } else {
+    return <Navbar />;
+  }
 };
 
 export default App;

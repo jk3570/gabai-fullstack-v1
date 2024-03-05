@@ -2,37 +2,57 @@ import { useState } from "react";
 import Popup from "reactjs-popup";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Signup from "./signup";
-import { useLogin } from "../hooks/useLogin";
+import { Link } from "react-router-dom";
 
-const Login = () => {
-  const [identifier, setIdentifier] = useState(""); // Updated state to store either email or username
+const Login = ({ login }) => {
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useLogin();
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(identifier, password); // Passing identifier (email or username) to login function
+    // Your login logic here using the `login` state passed as prop
+    if (isLoading) return; // Prevent multiple submissions
+    setIsLoading(true);
+    try {
+      // Perform login operation here
+      // For example:
+      // const response = await login(identifier, password);
+      // Handle response accordingly
+    } catch (error) {
+      setError("An error occurred during login."); // Example error message
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
-    <Popup trigger={<button className="border-2 rounded-xl p-4 py-1.5 border-azure-500 text-azure-500">Log in</button>
-  }
-  modal
-  nested
->
+    <Popup
+      trigger={
+        <button className="border-2 rounded-xl p-4 py-1.5 border-azure-500 text-azure-500">
+          Log in
+        </button>
+      }
+      modal
+      nested
+    >
       {(close) => (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 backdrop-filter backdrop-blur-lg bg-opacity-25 bg-black ">
-          <div className="modal h-[23rem] w-[31.00rem] rounded-2xl bg-white flex flex-col mx-10 ">
+        <form onSubmit={handleSubmit}>
+          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 backdrop-filter backdrop-blur-lg bg-opacity-25 bg-black ">
+            <div className="modal h-[23rem] w-[31.00rem] rounded-2xl bg-white flex flex-col mx-10 ">
               <div className="flex flex-row align-center justify-end p-1">
-                <IoIosCloseCircleOutline className="text-3xl cursor-pointer" onClick={() => close()} />
+                <IoIosCloseCircleOutline
+                  className="text-3xl cursor-pointer"
+                  onClick={() => close()}
+                />
               </div>
               <div className="flex flex-col items-center justify-center">
                 <h1 className="font-bold text-4xl">
                   Sign In to <span className="text-azure">GabAi</span>
                 </h1>
-                
                 <p>Empower your workplace today!</p>
-                <br/>
+                <br />
               </div>
 
               <div className="flex flex-col items-center justify-center">
@@ -40,7 +60,7 @@ const Login = () => {
                   type="text"
                   id="identifier"
                   name="identifier"
-                  placeholder="Email or Username" // Updated placeholder
+                  placeholder="Email or Username"
                   onChange={(e) => setIdentifier(e.target.value)}
                   value={identifier}
                   className="w-[25rem] border-2 border-black rounded-xl p-2"
@@ -57,27 +77,29 @@ const Login = () => {
                 />
               </div>
               <div className="mx-12">
-                <br/>
-                <button
-                  disabled={isLoading}
-                  type="submit"
-                  className="w-full bg-azure-500 text-white font-bold rounded-xl p-2"
-                >
-                  Log In
-                </button>
-                <br/>
-
+                <br />
+                <Link to="/signed-in">
+                  <button
+                    disabled={isLoading}
+                    type="submit"
+                    className="w-full bg-azure-500 text-white font-bold rounded-xl p-2"
+                    onClick={() => close()}
+                  >
+                    Log In
+                  </button>
+                </Link>
+                <br />
                 {error && <div className="error">{error}</div>}
               </div>
-
-              <br/>
+              <br />
               <div className="flex flex-row items-center justify-center">
                 <p>
                   Don't have an account? <Signup />
                 </p>
               </div>
+            </div>
           </div>
-        </div>
+        </form>
       )}
     </Popup>
   );

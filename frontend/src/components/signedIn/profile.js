@@ -1,7 +1,7 @@
 import Popup from "reactjs-popup";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import ProfileSettings from "./ProfileSettings";
-
+import { Link } from "react-router-dom";
 const Profile = () => {
   const backdrop =
     "fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 backdrop-filter backdrop-blur-lg bg-opacity-25 bg-black ";
@@ -44,7 +44,9 @@ const Profile = () => {
               <div className="flex flex-col items-center justify-center">
                 <ProfileSettings></ProfileSettings>
                 <br />
-                <button className={btnRed}>Log Out</button>
+                <Link to="/">
+                  <button className={btnRed}>Log Out</button>
+                </Link>
               </div>
             </div>
           </div>

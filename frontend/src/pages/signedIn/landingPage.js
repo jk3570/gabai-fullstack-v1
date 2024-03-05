@@ -1,11 +1,11 @@
 // Modules
 import React from "react";
 import Helmet from "react-helmet";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 // Components
 import Search from "../search/search";
-import Sect2 from "../components/landingPage/sect2";
+import Sect2 from "../../components/landingPage/sect2";
 
 function LandingPage() {
   const { user, dispatch } = useAuthContext();
@@ -22,12 +22,12 @@ function LandingPage() {
       <Helmet>
         <title>GabAI</title>
       </Helmet>
-      <section>
+      <section id="home">
         {/* 1st section of landing page */}
         <Search></Search>
       </section>
 
-      <section>
+      <section id="about">
         {/* 2nd section of landing page */}
         <Sect2 />
       </section>
