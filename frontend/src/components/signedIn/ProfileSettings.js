@@ -48,7 +48,7 @@ const profileSettings = () => {
                   <div className="grid grid-cols-2 gap-x-2 items-center justify-between py-1">
                     {/* Sex dropdown*/}
                     <div className="flex flex-col">
-                      <label htmlFor="">Sex</label>
+                      <label htmlFor="">Gender</label>
 
                       <select className="border-2 border-black rounded-xl p-2">
                         <option>Male</option>
@@ -90,9 +90,9 @@ const profileSettings = () => {
                   </div>
 
                   {/* Mobile #*/}
-                  <label htmlFor="">Mobile #</label>
+                  <label htmlFor="">Email</label>
                   <input
-                    type="number"
+                    type="text"
                     name=""
                     id=""
                     className="border-2 border-black rounded-xl p-2"
