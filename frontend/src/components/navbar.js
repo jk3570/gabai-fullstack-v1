@@ -67,13 +67,13 @@ function Header() {
           <div className="nav">
             <nav className="flex flex-row gap-x-10 list-none">
               <li>
-                <Link>Home</Link>
+                <a href="#home">Home</a>
               </li>
               <li>
                 <Link>Chat</Link>
               </li>
               <li>
-                <Link>About</Link>
+                <a href="#about">About</a>
               </li>
             </nav>
           </div>

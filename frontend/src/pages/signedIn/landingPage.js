@@ -22,12 +22,12 @@ function LandingPage() {
       <Helmet>
         <title>GabAI</title>
       </Helmet>
-      <section>
+      <section id="home">
         {/* 1st section of landing page */}
         <Search></Search>
       </section>
 
-      <section>
+      <section id="about">
         {/* 2nd section of landing page */}
         <Sect2 />
       </section>

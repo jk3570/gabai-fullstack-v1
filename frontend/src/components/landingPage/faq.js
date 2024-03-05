@@ -1,62 +1,70 @@
 import "../../css/faq.css";
 import { useState } from "react";
-import { FaChevronDown } from "react-icons/fa6";
-import { FaChevronUp } from "react-icons/fa6";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 
 const Faq = () => {
-  const [showDescription, setShowDescription] = useState(false);
+  const [showDescriptions, setShowDescriptions] = useState([]);
 
-  const toggleDesc = () => {
-    const description = document.getElementById("description");
-    if (!showDescription) {
-      description.style.display = "block";
-      const height = description.scrollHeight + "px";
-      description.style.height = height;
-    } else {
-      description.style.height = "0";
-      setTimeout(() => {
-        description.style.display = "none";
-      }, 300); // Adjust the duration to match your CSS transition duration
-    }
-    setShowDescription(!showDescription);
+  const toggleDesc = (index) => {
+    setShowDescriptions((prevState) => {
+      const newState = [...prevState];
+      newState[index] = !newState[index];
+      return newState;
+    });
   };
 
-  const box = "border-2 border-azure-500 p-3 rounded-xl";
+  const faqs = [
+    {
+      question: "What is GabAI?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+    },
+    {
+      question: "What is GabAI?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+    },
+    {
+      question: "What is GabAI?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+    },
+    {
+      question: "What is GabAI?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+    },
+    // Add more FAQ items here
+  ];
+
+  const box = "border-2 border-azure-500 p-3 rounded-xl my-3";
 
   return (
-    <div className="h-screen my-2">
+    <div className="h-auto my-2">
       <center>
         <h1 className="font-bold">Frequently Asked Questions</h1>
       </center>
       <br />
-      <div className={box}>
-        <div onClick={toggleDesc}>
-          <div className="flex justify-between items-center">
-            <h2
-              className={`font-bold transition-all duration-300 ${
-                showDescription ? "show-description" : ""
+      {faqs.map((faq, index) => (
+        <div key={index} className={box}>
+          <div onClick={() => toggleDesc(index)}>
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold">{faq.question}</h2>
+              <div className="font-bold">
+                {showDescriptions[index] ? <FaChevronUp /> : <FaChevronDown />}
+              </div>
+            </div>
+
+            <p
+              className={`faq-description ${
+                showDescriptions[index] ? "open" : ""
               }`}
             >
-              What is GabAI?
-            </h2>
-            <div className="font-bold">
-              {showDescription ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
+              {faq.answer}
+            </p>
           </div>
-
-          <p
-            id="description"
-            className={`transition-all duration-300 ${
-              showDescription ? "show-description" : ""
-            }`}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            consequatur vero cupiditate labore. Veniam debitis eius quibusdam,
-            doloribus similique odio unde possimus nesciunt ab beatae,
-            architecto at sit, consequatur labore?
-          </p>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
