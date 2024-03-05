@@ -1,11 +1,11 @@
 // Modules
 import React from "react";
 import Helmet from "react-helmet";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 // Components
 import Search from "../search/search";
-import Sect2 from "../components/landingPage/sect2";
+import Sect2 from "../../components/landingPage/sect2";
 
 function LandingPage() {
   const { user, dispatch } = useAuthContext();

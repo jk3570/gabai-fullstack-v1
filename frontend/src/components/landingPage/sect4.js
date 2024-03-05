@@ -2,12 +2,12 @@ import React from "react";
 
 const CallToAction = () => {
   return (
-    <div className="flex items-center justify-center bg-gray-100 w-screen h-screen ">
+    <div className="flex items-center justify-center bg-gray-100 h-screen ">
       <div className="text-center">
-        <h1 className="text-6xl font-bold mb-20 ">
+        <h1 className=" font-bold mb-20 ">
           Let's stop <span className="text-azure">discrimination!</span>
         </h1>
-        <p className="pb-9 text-2xl px-5">
+        <p className="pb-9 px-5">
           Creating a safe space for everyone, where they can get the help they
           need against workplace discrimination.
           <br />

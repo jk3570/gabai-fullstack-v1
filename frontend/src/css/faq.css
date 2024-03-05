@@ -1,0 +1,8 @@
+#description {
+    display: none;
+    overflow: hidden;
+}
+
+.show-description {
+    display: block;
+}

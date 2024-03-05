@@ -20,12 +20,12 @@ function sect2() {
       </div>
       <div className="px-5 max-md:hidden">{/* Just to give them space*/}</div>
       <div className="p-0">
-        <h1 className="text-6xl font-bold mb-6 max-md:text-center">
+        <h1 className="font-bold mb-6 max-md:text-center">
           About <span className="text-azure">GabAi</span>
         </h1>
         <br />
         <p
-          className="text-justify text-xl
+          className="text-justify
         leading-loose
         max-md:text-center"
         >
