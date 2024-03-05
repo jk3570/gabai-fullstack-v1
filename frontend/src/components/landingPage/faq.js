@@ -1,5 +1,7 @@
 import "../../css/faq.css";
 import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronUp } from "react-icons/fa6";
 
 const Faq = () => {
   const [showDescription, setShowDescription] = useState(false);
@@ -29,13 +31,18 @@ const Faq = () => {
       <br />
       <div className={box}>
         <div onClick={toggleDesc}>
-          <h2
-            className={`font-bold transition-all duration-300 ${
-              showDescription ? "show-description" : ""
-            }`}
-          >
-            What is GabAI?
-          </h2>
+          <div className="flex justify-between items-center">
+            <h2
+              className={`font-bold transition-all duration-300 ${
+                showDescription ? "show-description" : ""
+              }`}
+            >
+              What is GabAI?
+            </h2>
+            <div className="font-bold">
+              {showDescription ? <FaChevronUp /> : <FaChevronDown />}
+            </div>
+          </div>
 
           <p
             id="description"
