@@ -1,5 +1,9 @@
 import { BsArrowRight } from "react-icons/bs";
 
+const chat = {
+  bottom: 0,
+};
+
 function Chat() {
   const username = "User";
   const textbox = "w-full h-10 p-2 rounded-full border-2 border-gray-500";
@@ -20,10 +24,11 @@ function Chat() {
     },
   ];
 
-  // Reverse the prompt array to display messages from bottom to top
-
   return (
-    <div className="w-full h-[60vh] relative max-w-4xl px-5 lg:px-0 mx-auto mt-20">
+    <div
+      style={chat}
+      className=" w-full h-[60vh] relative max-w-4xl px-5 lg:px-0 mx-auto mt-20"
+    >
       <div className="chatbox mb-12 bottom-0">
         {prompt.map((item, index) => (
           <div key={index} className="p-5 bg-gray-100 ">
@@ -31,7 +36,7 @@ function Chat() {
               <div
                 className={
                   item.color +
-                  " h-10 w-10 rounded-full flex justify-center items-center"
+                  " h-10 w-10 rounded-full flex justify-center items-center "
                 }
               ></div>
               <p>
@@ -43,7 +48,6 @@ function Chat() {
           </div>
         ))}
       </div>
-
       <form action="" className="flex flex-row gap-1 absolute bottom-0 w-full">
         <input type="text" name="" id="" className={textbox} />
         <button type="submit" className={submitBtn}>
