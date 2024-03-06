@@ -71,7 +71,7 @@ function Header() {
                 <a href="#home">Home</a>
               </li>
               <li>
-                <Link>Chat</Link>
+                <Link to="/chat">Chat</Link>
               </li>
               <li>
                 <a href="#about">About</a>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline, IoMdEye, IoMdEyeOff } from "react-icons/io"; // Import eye icons
 import Signup from "./signup";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,7 @@ const Login = ({ login }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // State to track password visibility
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +40,7 @@ const Login = ({ login }) => {
     >
       {(close) => (
         <form onSubmit={handleSubmit}>
-          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 backdrop-filter backdrop-blur-lg bg-opacity-25 bg-black ">
+          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-opacity-25 bg-black ">
             <div className="modal h-[23rem] w-[31.00rem] rounded-2xl bg-white flex flex-col mx-10 ">
               <div className="flex flex-row align-center justify-end p-1">
                 <IoIosCloseCircleOutline
@@ -66,15 +67,23 @@ const Login = ({ login }) => {
                   className="w-[25rem] border-2 border-black rounded-xl p-2"
                 />
                 <span className="py-2"></span>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  className="w-[25rem] border-2 border-black rounded-xl p-2"
-                />
+                <div className="relative w-[25rem]">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    className="w-full border-2 border-black rounded-xl p-2 pr-10" // Added pr-10 for eye icon
+                  />
+                  <div
+                    className="absolute inset-y-0 right-0 flex items-center mr-2 cursor-pointer"
+                    onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
+                  >
+                    {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+                  </div>
+                </div>
               </div>
               <div className="mx-12">
                 <br />
