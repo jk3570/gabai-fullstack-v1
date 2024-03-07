@@ -15,24 +15,24 @@ const Faq = () => {
 
   const faqs = [
     {
-      question: "What is GabAI?",
+      question: "What is workplace discrimination?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+        "Discrimination in the workplace occurs when an individual receives unjust treatment or harassment due to their protected characteristics, which may include age, sex, gender identity, sexual orientation, race, ethnicity, religion, disability, marital status, or pregnancy, among other things.",
     },
     {
-      question: "What is GabAI?",
+      question: "What laws protect me from discrimination?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+        "People in the Philippines are protected from discrimination in the workplace by laws such as the Republic Act No. 7277 (Magna Carta for Disabled Persons), the Republic Act No. 7877 (Anti-Sexual Harassment Act), and the Republic Act No. 6725 (Anti-Racial Discrimination Act).",
     },
     {
-      question: "What is GabAI?",
+      question: "What happens to employers who discriminate?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+        "According to the Philippine Labor Code (Presidential Decree No. 442), employers who practice discrimination may be subject to fines, punishments, or other negative outcomes. In addition, they might have to pay the victims' expenses and put policies in place to stop discrimination in the future.",
     },
     {
-      question: "What is GabAI?",
+      question: "Where can I get help if I face discrimination?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur consequatur vero cupiditate labore. Veniam debitis eius quibusdam, doloribus similique odio unde possimus nesciunt ab beatae, architecto at sit, consequatur labore?",
+        "Government organisations such as the Department of Labor and Employment (DOLE), the National Labor Relations Commission (NLRC), and the Commission on Human Rights (CHR), can help you if you are the victim of workplace discrimination.",
     },
     // Add more FAQ items here
   ];

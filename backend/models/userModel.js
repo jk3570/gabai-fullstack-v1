@@ -85,27 +85,42 @@ userSchema.statics.signup = async function(username,
     throw Error('Email already in use')
   }
 
+  //initialize the hashing attribute
   const salt = await bcrypt.genSalt(10)
-  const hash = await bcrypt.hash(password, salt)
+
+  //hashing all the users data
+  const usernameHash = await bcrypt.hash(username, salt)
+  const firstnameHash = await bcrypt.hash(firstname, salt)
+  const lastnameHash = await bcrypt.hash(lastname, salt)
+  const genderHash = await bcrypt.hash(gender, salt)
+  const birthdateHash = await bcrypt.hash(birthdate, salt)
+  const regionHash = await bcrypt.hash(region, salt)
+  const provinceHash = await bcrypt.hash(province, salt)
+  const cityHash = await bcrypt.hash(city, salt)
+  const barangayHash = await bcrypt.hash(barangay, salt)
+  const emailHash = await bcrypt.hash(email, salt)
+  const passwordHash = await bcrypt.hash(password, salt)
+  
 
   // Inserting data to database
   const user = await this.create({ 
-    username,
-    firstname,
-    lastname,
-    gender,
-    birthdate,
-    region,
-    province,
-    city,
-    barangay,
-    email, 
-    password: hash })
+    username: usernameHash,
+    firstname: firstnameHash,
+    lastname: lastnameHash,
+    gender: genderHash,
+    birthdate: birthdateHash,
+    region: regionHash,
+    province: provinceHash,
+    city: cityHash,
+    barangay: barangayHash,
+    email: emailHash,
+    password: passwordHash })
 
   return user
 }
 
 // Static login method
+// Get the user from the database
 userSchema.statics.login = async function(identifier, password) {
 
   if (!identifier || !password) {
