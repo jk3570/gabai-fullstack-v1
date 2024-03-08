@@ -93,6 +93,12 @@ function Header() {
               <BsMoon className="text-2xl" onClick={toggle} />
             </span>
 
+            {/* Search Icon */}
+            <Link to="/signed-in/search">
+              <FaSearch className="text-2xl" />
+            </Link>
+
+
             <span className="hidden max-md:flex">
               <SideNav />
             </span>
