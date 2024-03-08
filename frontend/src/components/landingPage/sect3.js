@@ -1,13 +1,13 @@
 import "../../css/section-3.css";
-
-import { useEffect, useRef } from 'react';
+/* 
+import { useEffect, useRef } from 'react'; */
 
 //images
 import Search from "../../img/SearchIcon.png";
 import PWA from "../../img/PhoneDesktop.png";
 import Convo from "../../img/Message.png";
 
-function Sect3() {
+function sect3() {
   const card =
     "w-[32%] h-[15rem] flex flex-col justify-center items-center landing-section shadow-lg bg-gray-100 rounded-lg transition-transform transform-gpu";
   const cardIcon =
@@ -15,54 +15,7 @@ function Sect3() {
   const cardTitle = "font-bold text-azure mb-2 text-xl";
   const cardDetail = "text-center text-sm max-md:text-center";  
 
-  const cardRef1 = useRef(null);
-  const cardRef2 = useRef(null);
-  const cardRef3 = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-pop');
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer1 = new IntersectionObserver(callback, options);
-    const observer2 = new IntersectionObserver(callback, options);
-    const observer3 = new IntersectionObserver(callback, options);
-
-    if (cardRef1.current) {
-      observer1.observe(cardRef1.current);
-    }
-
-    if (cardRef2.current) {
-      observer2.observe(cardRef2.current);
-    }
-
-    if (cardRef3.current) {
-      observer3.observe(cardRef3.current);
-    }
-
-    return () => {
-      if (cardRef1.current) {
-        observer1.unobserve(cardRef1.current);
-      }
-      if (cardRef2.current) {
-        observer2.unobserve(cardRef2.current);
-      }
-      if (cardRef3.current) {
-        observer3.unobserve(cardRef3.current);
-      }
-    };
-  }, []);
+ 
 
 
   return (
@@ -135,4 +88,4 @@ function Sect3() {
   );
 }
 
-export default Sect3;
+export default sect3;

@@ -4,7 +4,7 @@ import sec2 from "../../img/sec2.jpg";
 function sect2() {
   return (
     <div
-      className="bg-gray-100
+      className="relative z-10  bg-gray-100
       rounded-lg
       flex flex-row justify-around items-center px-[3rem]
       max-md:flex-col
@@ -40,4 +40,4 @@ function sect2() {
   );
 }
 
-export default sect2;
+export default sect2; 

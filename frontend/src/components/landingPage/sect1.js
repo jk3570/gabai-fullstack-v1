@@ -26,7 +26,7 @@ const WorkplaceDiscriminationLaws = () => {
 
   return (
     <div
-      className="flex flex-col justify-center min-h-screen relative max-md:p-1"
+      className="relative z-10 flex flex-col justify-center min-h-screen relative max-md:p-1"
     >
           <div class="fixed inset-0 w-full h-screen inset-0 z-0">
             <img 

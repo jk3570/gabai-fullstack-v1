@@ -4,13 +4,13 @@ import { FaFacebook, FaPhone, FaMailBulk } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="flex justify-center">
+    <div className="relative z-10 flex justify-center mt-20">
       <footer
-        className="h-auto w-full flex flex-row justify-center gap-10
-  max-w-4xl 
-  max-md:flex-col
-  max-md:px-2
-  "
+        className="h-auto w-full flex flex-row justify-center gap-10 p-2
+        max-w-4xl 
+        max-md:flex-col
+        max-md:px-2
+        "
       >
         <div>
           <b>Location</b>
