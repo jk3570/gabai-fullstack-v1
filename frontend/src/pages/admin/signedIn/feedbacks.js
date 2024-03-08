@@ -1,7 +1,7 @@
 import React from "react";
 
 //
-import AdminSidebar from "../../components/admin/sidebar";
+import AdminSidebar from "../../../components/admin/sidebar";
 const FeedBacks = [
   {
     id: 1,

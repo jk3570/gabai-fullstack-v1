@@ -15,3 +15,18 @@
      }
 
  }
+
+ #open-sidebar{
+    background-color: #374151;
+    width:5rem;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+
+    >#burger{
+        font-weight: bold;
+        color:white;
+        font-size: 2rem;
+    }
+ }

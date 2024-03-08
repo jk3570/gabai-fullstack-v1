@@ -12,7 +12,7 @@ function UserDemographics() {
 
   return (
     <div>
-      <div className="flex flex-col bg-gray-300 w-auto h-auto mx-10 my-5 rounded-xl">
+      <div className="flex flex-col bg-gray-300 w-auto h-auto rounded-xl max-w-4xl mx-auto p-4">
         <div className="flex flex-col w-full p-1 my-4 ">
           <ul className="flex flex-row justify-between gap-1 items-start text-white">
             <li
@@ -39,10 +39,11 @@ function UserDemographics() {
         </div>
 
         {/* TODO: Graph */}
-
-        {currentPage === "sex" && <SexDemog />}
-        {currentPage === "location" && <LocationDemog />}
-        {currentPage === "age" && <AgeDemog />}
+        <div id="center" className="flex flex-col w-full p-1 my-4 ">
+          {currentPage === "sex" && <SexDemog />}
+          {currentPage === "location" && <LocationDemog />}
+          {currentPage === "age" && <AgeDemog />}
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,8 @@
 import { FaUsers } from "react-icons/fa6";
 import { LiaBalanceScaleSolid } from "react-icons/lia";
 import { VscFeedback } from "react-icons/vsc";
+import { RxDashboard } from "react-icons/rx";
+
 import { Link } from "react-router-dom";
 import "../../css/admin-sidebar.css";
 
@@ -16,12 +18,12 @@ const close = () => {
 function Sidebar() {
   return (
     <>
-      <div
-        className="p-5 shadow-md rounded-xl border-2 cursor-pointer flex flex-col items-center justify-center"
-        onClick={open}
-      >
-        &#9776;
+      <div id="open-sidebar">
+        <div className="justify-center" onClick={open} id="burger">
+          &#9776;
+        </div>
       </div>
+
       <div id="sidebar">
         <div className="my-5 text-white ">
           <div className="flex justify-end px-10">
@@ -34,6 +36,15 @@ function Sidebar() {
           <br />
           <div className="my-[10rem]"></div>
           <nav className="flex flex-col gap-10 list-none items-start text-white">
+            <li>
+              <Link
+                to="/signed-in/admin"
+                className="flex flex-row gap-2 text-2xl"
+              >
+                <RxDashboard className="text-3xl" />
+                Dashboard
+              </Link>
+            </li>
             <li>
               <Link to="/admin/users" className="flex flex-row gap-2 text-2xl">
                 <FaUsers className="text-3xl" />
