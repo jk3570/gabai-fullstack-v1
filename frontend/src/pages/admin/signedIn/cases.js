@@ -1,10 +1,9 @@
 import React from "react";
 
-//Components
+// Component
+import AdminSidebar from "../../../components/admin/sidebar";
 
-import AdminSidebar from "../../components/admin/sidebar";
-
-const userList = [
+const Cases = [
   {
     id: 1,
     name: "Olivia Rodriguez",
@@ -13,48 +12,46 @@ const userList = [
     province: "Bulacan",
     city: "Malolos",
     mobileNumber: "09123456789",
+    password: "c4a81f6b32e59...",
   },
   // ... other users in the list
 ];
 
 const formatNumber = (num) =>
   num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-function UserList() {
+function CasesList() {
   return (
     <div className="bg-gray-200 h-screen flex flex-row">
-    <AdminSidebar />
-    <div className="flex flex-col w-full">
-      <div className="p-4">
-        <div className="flex justify-between items-center mt-6">
-          <h1 className="font-medium">Users</h1>
+      <AdminSidebar />
+      <div className="flex flex-col w-full">
+        <div className="p-4">
+          <div className="flex justify-between items-center mt-6">
+            <h1 className="font-medium item-center">Cases</h1>
+          </div>
         </div>
-      </div>
 
-        <div className="bg-gray-300 ">
+        <div className="bg-gray-300">
           <div className=" border border-azure overflow-x-auto rounded-lg">
             <table className="w-full table-auto rounded-lg">
-              <thead className=" px-10 border border-azure bg-azure">
+              <thead className=" px-10 border border-azure bg-azure  ">
                 <tr>
                   <th className="px-4 py-2 text-left text-white">Name</th>
-                  <th className="px-4 py-2 text-left text-white">Sex/ Age</th>
-                  <th className="px-4 py-2 text-left text-white">Province/City</th>
-                  <th className="px-4 py-2 text-left text-white">Mobile Number</th>
-                  <th className="px-4 py-2 text-left text-white">Action</th>
+                  <th className="px-4 py-2 text-left text-white">Case</th>
+                  <th className="px-4 py-2 text-left text-white">Date</th>
+                  <th className="px-6 py-2 text-left text-white">Action</th>
                 </tr>
               </thead>
               <tbody>
-                {userList.map((user) => (
+                {Cases.map((cases) => (
                   <tr
-                    key={user.id}
+                    key={Cases.id}
                     className="border-b last:border-b-0 border-gray-200"
                   >
-                    <td className="px-4 py-2">{user.name}</td>
-                    <td className="px-4 py-2">{`${user.sex} / ${user.age}`}</td>
-                    <td className="px-4 py-2">{`${user.province} / ${user.city}`}</td>
-                    <td className="px-4 py-2">{user.mobileNumber}</td>
-                    <td className="px-4 py-2">{user.password}</td>
+                    <td className="px-4 py-2">{cases.name}</td>
+                    <td className="px-4 py-2">{`${Cases.cases} / `}</td>
+                    <td className="px-4 py-2">{`${Cases.date} / `}</td>
                     <td className="px-4 py-2">
-                      <button className="text-black py-1 px-1 bg-gray-200 hover:bg-azure  rounded-full ...  ">
+                      <button className="text-black py-1 px-1 bg-gray-200 hover:bg-azure  rounded-full ... ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -70,8 +67,7 @@ function UserList() {
                           />
                         </svg>
                       </button>
-
-                      <button className="text-black py-1 px-1 bg-gray-200 hover:bg-azure   rounded-full ... ">
+                      <button className="text-black py-1 px-1 bg-gray-200 hover:bg-azure rounded-full ...  ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -99,4 +95,4 @@ function UserList() {
   );
 }
 
-export default UserList;
+export default CasesList;

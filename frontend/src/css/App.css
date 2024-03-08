@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+h1 {
+  font-size:3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

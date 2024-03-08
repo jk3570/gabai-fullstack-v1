@@ -59,7 +59,7 @@ function Header() {
       >
         {/* Brand Name */}
         <div className="w-full max-w-4xl flex justify-between items-center">
-          <Link to="/">
+          <Link to="/signed-in">
             <div onClick={scrollToTop} className="">
               <img src={Logo} alt="Logo" style={{ height: "25px" }} />
             </div>
@@ -71,7 +71,7 @@ function Header() {
                 <a href="#home">Home</a>
               </li>
               <li>
-                <Link to="/chat">Chat</Link>
+                <Link to="/signed-in/chat">Chat</Link>
               </li>
               <li>
                 <a href="#about">About</a>
@@ -85,7 +85,7 @@ function Header() {
             <Profile />
 
             {/* Search Icon */}
-            <Link to="/search">
+            <Link to="/signed-in/search">
               <FaSearch className="text-2xl" />
             </Link>
 

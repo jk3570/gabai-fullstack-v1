@@ -4,6 +4,7 @@ import { BarChart, PieChart } from "@mui/x-charts";
 // Data for the Bar Graph and Pie Chart
 var maleCount = 10;
 var femaleCount = 50;
+var otherCount = 20;
 
 const MyBarGraph = React.memo(() => (
   <BarChart
@@ -11,6 +12,7 @@ const MyBarGraph = React.memo(() => (
     series={[
       { data: [maleCount], label: "Male", color: "#38BDF8" },
       { data: [femaleCount], label: "Female", color: "#F472B6" },
+      { data: [otherCount], label: "Other", color: "#CCFF66" },
     ]}
     width={250}
     height={300}
@@ -24,6 +26,7 @@ const PieChartComponent = React.memo(() => (
         data: [
           { id: 0, value: maleCount, label: "Male", color: "#38BDF8" },
           { id: 1, value: femaleCount, label: "Female", color: "#F472B6" },
+          { id: 2, value: otherCount, label: "Other", color: "#CCFF66" },
         ],
       },
     ]}
@@ -41,7 +44,7 @@ function Sex() {
         </center>
       </div>
 
-      <div className="flex flex-row gap-1 items-center justify-center w-[75vw] text-azure">
+      <div className="flex flex-row gap-1 items-center justify-center text-azure">
         <div>
           {/* Bar Graph */}
           <MyBarGraph />
