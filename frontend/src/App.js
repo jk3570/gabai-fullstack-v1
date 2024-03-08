@@ -6,6 +6,10 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
+
+import "./css/App.css";
+import "animate.css";
+
 import Navbar from "./components/navbar";
 import SignedInNavbar from "./components/signedIn/navbar";
 import Footer from "./components/footer";
@@ -41,14 +45,17 @@ const App = () => {
         {/* Admin Routes */}
         <Route path="/admin" element={<NotAdmin />} />
         <Route path="/signed-in/admin" element={<Admin />} />
-        <Route path="/admin/users" element={<UserList />} />
-        <Route path="/admin/cases" element={<CasesList />} />
-        <Route path="/admin/feedbacks" element={<FeedbacksList />} />
+        <Route path="/signed-in/admin/users" element={<UserList />} />
+        <Route path="/signed-in/admin/cases" element={<CasesList />} />
+        <Route path="/signed-in/admin/feedbacks" element={<FeedbacksList />} />
         <Route path="/chat" element={<Chat />} />
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/signed-in" element={<SignedIn />} />
         <Route path="/testing" element={<Testing />} />
+
+        <Route path="/signed-in/chat" element={<Chat />} />
+        <Route path="/signed-in/search" element={<Search />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -61,7 +68,12 @@ const NavbarOrSignedInNavbar = () => {
   // Check if the current route is '/signed-in', then render SignedInNavbar, otherwise render Navbar
   if (
     location.pathname === "/signed-in" ||
-    location.pathname === "/signed-in/admin"
+    location.pathname === "/signed-in/admin" ||
+    location.pathname === "/signed-in/admin/users" ||
+    location.pathname === "/signed-in/admin/cases" ||
+    location.pathname === "/signed-in/admin/feedbacks" ||
+    location.pathname === "/signed-in/chat" ||
+    location.pathname === "/signed-in/search"
   ) {
     return <SignedInNavbar />;
   } else {

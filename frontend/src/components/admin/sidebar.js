@@ -19,7 +19,11 @@ function Sidebar() {
   return (
     <>
       <div id="open-sidebar">
-        <div className="justify-center" onClick={open} id="burger">
+        <div
+          className="justify-center cursor-pointer"
+          onClick={open}
+          id="burger"
+        >
           &#9776;
         </div>
       </div>
@@ -27,7 +31,7 @@ function Sidebar() {
       <div id="sidebar">
         <div className="my-5 text-white ">
           <div className="flex justify-end px-10">
-            <span onClick={close} className="text-2xl">
+            <span onClick={close} className="text-3xl cursor-pointer">
               &times;
             </span>
           </div>
@@ -46,14 +50,20 @@ function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link to="/admin/users" className="flex flex-row gap-2 text-2xl">
+              <Link
+                to="/signed-in/admin/users"
+                className="flex flex-row gap-2 text-2xl"
+              >
                 <FaUsers className="text-3xl" />
                 Users
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/cases" className="flex flex-row gap-2 text-2xl">
+              <Link
+                to="/signed-in/admin/cases"
+                className="flex flex-row gap-2 text-2xl"
+              >
                 <LiaBalanceScaleSolid className="text-3xl" />
                 Cases
               </Link>
@@ -61,7 +71,7 @@ function Sidebar() {
 
             <li>
               <Link
-                to="/admin/feedbacks"
+                to="/signed-in/admin/feedbacks"
                 className="flex flex-row gap-2 text-2xl"
               >
                 <VscFeedback className="text-3xl" />

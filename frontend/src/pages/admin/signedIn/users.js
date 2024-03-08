@@ -3,12 +3,14 @@ import React from "react";
 //Components
 
 import AdminSidebar from "../../../components/admin/sidebar";
+import AddAccount from "../../../components/admin/addNewAccount";
 
 //SVGs
 
 import { RxUpdate } from "react-icons/rx";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { RiAddCircleFill } from "react-icons/ri";
+import { MdEdit } from "react-icons/md";
+import { FaBoxArchive } from "react-icons/fa6";
 
 const addUserStyle =
   "flex flex-row justify-center items-center gap-2 p-2 bg-azure-300 rounded-xl text-white hover:bg-azure-400 hover:scale-110 transition-all duration-300";
@@ -67,10 +69,10 @@ function UserList() {
                     <td className="px-4 py-2">{user.mobileNumber}</td>
                     <td className="px-4 py-2 flex flex-row gap-3">
                       <button className="text-black py-1 px-1 bg-gray-200 hover:bg-azure  rounded-full ...  ">
-                        <RxUpdate />
+                        <MdEdit className="text-2xl" />
                       </button>
                       <button className="text-black py-1 px-1 bg-gray-200 hover:bg-azure   rounded-full ... ">
-                        <RiDeleteBin6Line />
+                        <FaBoxArchive className="text-2xl" />
                       </button>
                     </td>
                   </tr>
@@ -81,15 +83,7 @@ function UserList() {
         </div>
         <div className="flex flex-col">
           <div className="flex justify-center items-center mt-6">
-            <button className={addUserStyle}>
-              <RiAddCircleFill /> Add New User
-            </button>
-
-            <div className="flex flex-col gap-2">
-              <li>User</li>
-              <li>Lawyer</li>
-              <li>Admin</li>
-            </div>
+            <AddAccount />
           </div>
         </div>
       </div>
