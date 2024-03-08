@@ -4,8 +4,8 @@
      position: fixed;
      z-index: 1;
      top: 0;
-     right: 0;
-     background-color: #111;
+     left: 0;
+     background-color: #D1D5DB;
 
      overflow-x: hidden;
      transition: 0.5s;

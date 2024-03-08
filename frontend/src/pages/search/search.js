@@ -35,38 +35,43 @@ function Search() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen">
-      <Helmet>
-        <title>Search - GabAI</title>
-      </Helmet>
+    <div className="w-full h-screen max-w-4xl px-5 lg:px-0 center mx-auto flex justify-center items-center">
+      <div className="flex flex-col justify-between items-center ">
+        <Helmet>
+          <title>Search - GabAI</title>
+        </Helmet>
 
-      <h1 className="">
-        <img src={Logo} alt="Logo" style={{ height: "80px" }} />
-      </h1>
+        <h1 className="">
+          <img src={Logo} alt="Logo" style={{ height: "80px" }} />
+        </h1>
 
-      <br />
+        <br />
 
-      <p className="text-md">
-        Navigate the legal landscape of workplace discrimination
-      </p>
+        <p className="text-md">
+          Navigate the legal landscape of workplace discrimination
+        </p>
 
-      <br />
+        <br />
 
-      <form onSubmit={handleSearch}>
-        <div className="flex flex-row gap-2">
-          <input
-            type="text"
-            placeholder="Search here"
-            className="w-[40rem] border-2 border-black rounded-full p-4"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
+        <form onSubmit={handleSearch}>
+          <div className="flex flex-row gap-2">
+            <input
+              type="text"
+              placeholder="Search here"
+              className="w-[50rem] border-2 border-black rounded-full p-4 max-md:w-[30rem]"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
 
-          <button className="ml-[-4rem] text-4xl text-azure z-10" type="submit">
-            <IoSearchOutline />
-          </button>
-        </div>
-      </form>
+            <button
+              className="ml-[-4rem] text-4xl text-azure z-10"
+              type="submit"
+            >
+              <IoSearchOutline />
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

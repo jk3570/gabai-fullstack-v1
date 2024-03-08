@@ -11,7 +11,7 @@ import { FaSearch } from "react-icons/fa";
 
 // Components
 // import SignIn from "./SignIn";
-import SideNav from "../SideNav";
+import SideNav from "../signedIn/SideNav";
 import Login from "../login";
 import Profile from "./profile";
 
@@ -66,7 +66,7 @@ function Header() {
           </Link>
 
           <div className="nav">
-            <nav className="flex flex-row gap-x-10 list-none">
+            <nav className="flex flex-row gap-x-10 list-none max-md:hidden">
               <li>
                 <a href="#home">Home</a>
               </li>
@@ -83,14 +83,25 @@ function Header() {
           <div className="flex flex-row items-center text-md gap-x-5">
             {/* Login Btn */}
             <Profile />
+            <span className="flex flex-row gap-5 max-md:hidden">
+              {/* Search Icon */}
+              <Link to="/signed-in/search">
+                <FaSearch className="text-2xl" />
+              </Link>
+
+              {/* Toggle night mode */}
+              <BsMoon className="text-2xl" onClick={toggle} />
+            </span>
 
             {/* Search Icon */}
             <Link to="/signed-in/search">
               <FaSearch className="text-2xl" />
             </Link>
 
-            {/* Toggle night mode */}
-            <BsMoon className="text-2xl" onClick={toggle} />
+
+            <span className="hidden max-md:flex">
+              <SideNav />
+            </span>
           </div>
         </div>
       </nav>
