@@ -7,8 +7,6 @@ import AddAccount from "../../../components/admin/addNewAccount";
 
 //SVGs
 
-import { RxUpdate } from "react-icons/rx";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdEdit } from "react-icons/md";
 import { FaBoxArchive } from "react-icons/fa6";
 

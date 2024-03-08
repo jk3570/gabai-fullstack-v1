@@ -36,7 +36,7 @@ const Profile = () => {
               </div>
 
               <div className="flex flex-col items-center justify-center">
-                <div className="h-[7rem] w-[7rem] bg-gray-300 rounded-full"></div>
+                {/* <div className="h-[7rem] w-[7rem] bg-gray-300 rounded-full"></div> */}
                 <h2>User1234</h2>
                 <p>1234@domain.com</p>
               </div>

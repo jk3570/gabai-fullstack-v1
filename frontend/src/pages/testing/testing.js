@@ -1,6 +1,6 @@
 // Welcome to Testing Page!!! 🧪
 
-import Profile from "../../components/signedIn/profile";
+import Profile from "../../components/profile";
 
 function Testing() {
   return (

@@ -11,9 +11,9 @@ import { FaSearch } from "react-icons/fa";
 
 // Components
 // import SignIn from "./SignIn";
-import SideNav from "../signedIn/SideNav";
+import SideNav from "./SideNav";
 import Login from "../login";
-import Profile from "./profile";
+import Profile from "../profile";
 
 const toggle = () => {
   var element = document.body;

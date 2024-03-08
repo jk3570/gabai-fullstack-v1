@@ -3,6 +3,7 @@ import { FaUsers } from "react-icons/fa6";
 import { LiaBalanceScaleSolid } from "react-icons/lia";
 import { VscFeedback } from "react-icons/vsc";
 import { RxDashboard } from "react-icons/rx";
+import { FaBoxArchive } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 import "../../css/admin-sidebar.css";
@@ -29,17 +30,18 @@ function Sidebar() {
       </div>
 
       <div id="sidebar">
-        <div className="my-5 text-white ">
-          <div className="flex justify-end px-10">
+        <div className="my-5 text-white">
+          <div className="flex justify-end px-10 ">
             <span onClick={close} className="text-3xl cursor-pointer">
               &times;
             </span>
           </div>
 
-          <h1 className="font-bold text-2xl">Admin Dashboard</h1>
           <br />
-          <div className="my-[10rem]"></div>
-          <nav className="flex flex-col gap-10 list-none items-start text-white">
+          <h1 className="font-bold text-2xl">Admin Dashboard</h1>
+          <br className="my-5" />
+
+          <nav className="flex flex-col gap-10 list-none items-start text-white p-3">
             <li>
               <Link
                 to="/signed-in/admin"
@@ -76,6 +78,13 @@ function Sidebar() {
               >
                 <VscFeedback className="text-3xl" />
                 Feedbacks
+              </Link>
+            </li>
+
+            <li>
+              <Link className="flex flex-row gap-2 text-2xl">
+                <FaBoxArchive className="text-3xl" />
+                Archived
               </Link>
             </li>
           </nav>

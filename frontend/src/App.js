@@ -11,7 +11,7 @@ import "./css/App.css";
 import "animate.css";
 
 import Navbar from "./components/navbar";
-import SignedInNavbar from "./components/signedIn/navbar";
+import SignedInNavbar from "./components/signedIn/signedin-navbar";
 import Footer from "./components/footer";
 import Home from "./pages/landingPage";
 
@@ -27,7 +27,7 @@ import CasesList from "./pages/admin/signedIn/cases";
 import FeedbacksList from "./pages/admin/signedIn/feedbacks";
 import Chat from "./pages/chat/chat";
 import Testing from "./pages/testing/testing";
-import Profile from "./components/signedIn/profile";
+import Profile from "./components/profile";
 import SignedIn from "./pages/signedIn/landingPage";
 
 const App = () => {
@@ -36,13 +36,15 @@ const App = () => {
       <Navbar />
       <Routes>
 
-        {/* Landing Routes */}
+        {/* Landing Routes and User */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/search" element={<Search />} />
         <Route path="/searchResults" element={<Results />} />
         <Route path="ToC" element={<Terms />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/profile" element={<Profile />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />} />
@@ -51,12 +53,10 @@ const App = () => {
         <Route path="/admin/feedbacks" element={<FeedbacksList />} />
         {/* <Route path="/chat" element={<Chat />} /> */}
 
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/signed-in" element={<SignedIn />} />
+        {/* <Route path="/signed-in" element={<SignedIn />} /> */}
+        {/* <Route path="/search" element={<Search />} /> */}
         <Route path="/testing" element={<Testing />} />
 
-        <Route path="/signed-in/chat" element={<Chat />} />
-        <Route path="/signed-in/search" element={<Search />} />
       </Routes>
       <Footer />
     </BrowserRouter>
