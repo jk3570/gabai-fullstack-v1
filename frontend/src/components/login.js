@@ -87,7 +87,7 @@ const Login = ({ login }) => {
               </div>
               <div className="mx-12">
                 <br />
-                <Link to="/signed-in">
+                <Link to="/">
                   <button
                     disabled={isLoading}
                     type="submit"

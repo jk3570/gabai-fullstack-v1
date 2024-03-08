@@ -9,7 +9,7 @@ import Even from "../../img/developers/even.png";
 const Developers = () => {
   const img = "w-[6rem] h-[6rem] mb-3";
   const center = "flex flex-col justify-center items-center mb-5";
-  const rounded = "rounded-full border-2 border-gray-500";
+  const rounded = "rounded-full border-0 border-gray-500";
   const devName = "font-bold text-azure mb-2 text-xl";
   const devPos = "text-center text-sm max-md:text-center";
   return (
