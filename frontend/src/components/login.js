@@ -41,7 +41,7 @@ const Login = ({ login }) => {
       {(close) => (
         <form onSubmit={handleSubmit}>
           <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-opacity-25 bg-black ">
-            <div className="modal h-[23rem] w-[31.00rem] rounded-2xl bg-white flex flex-col mx-10 ">
+            <div className="modal h-[23rem] w-[31.00rem] rounded-2xl bg-white flex flex-col mx-10 animate__animated animate__zoomIn animate__faster">
               <div className="flex flex-row align-center justify-end p-1">
                 <IoIosCloseCircleOutline
                   className="text-3xl cursor-pointer"

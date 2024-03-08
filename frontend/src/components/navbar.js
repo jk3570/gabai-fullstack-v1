@@ -64,7 +64,7 @@ function Header() {
             </div>
           </Link>
 
-          <div className="nav">
+          <div className="nav max-md:hidden">
             <nav className="flex flex-row gap-x-10 list-none">
               <li>
                 <a href="#home">Home</a>
@@ -82,14 +82,19 @@ function Header() {
           <div className="flex flex-row items-center text-md gap-x-5">
             {/* Login Btn */}
             <Login />
+            <span className="flex flex-row gap-x-5 max-md:hidden">
+              {/* Search Icon */}
+              <Link to="/search">
+                <FaSearch className="text-2xl" />
+              </Link>
 
-            {/* Search Icon */}
-            <Link to="/search">
-              <FaSearch className="text-2xl" />
-            </Link>
+              {/* Toggle night mode */}
+              <BsMoon className="text-2xl" onClick={toggle} />
+            </span>
 
-            {/* Toggle night mode */}
-            <BsMoon className="text-2xl" onClick={toggle} />
+            <span className="hidden max-md:flex">
+              <SideNav></SideNav>
+            </span>
           </div>
         </div>
       </nav>
