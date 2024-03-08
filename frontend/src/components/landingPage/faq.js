@@ -40,7 +40,7 @@ const Faq = () => {
   const box = "border-2 border-azure-500 p-3 rounded-xl my-3";
 
   return (
-    <div className="h-auto my-2">
+    <div className="relative z-10 h-auto my-2">
       <center>
         <h1 className="font-bold">Frequently Asked Questions</h1>
       </center>
@@ -49,14 +49,14 @@ const Faq = () => {
         <div key={index} className={box}>
           <div onClick={() => toggleDesc(index)}>
             <div className="flex justify-between items-center">
-              <h2 className="font-bold">{faq.question}</h2>
+              <h2 className="font-bold ml-3 mb-3 mt-2">{faq.question}</h2>
               <div className="font-bold">
                 {showDescriptions[index] ? <FaChevronUp /> : <FaChevronDown />}
               </div>
             </div>
 
             <p
-              className={`faq-description ${
+              className={`ml-3 mb-1  faq-description ${
                 showDescriptions[index] ? "open" : ""
               }`}
             >

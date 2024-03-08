@@ -7,77 +7,70 @@ import Nikol from "../../img/developers/nikol.jpg";
 import Even from "../../img/developers/even.png";
 
 const Developers = () => {
-  const img = "w-[10rem] h-[10rem]";
-  const center = "flex flex-col justify-center items-center";
+  const img = "w-[6rem] h-[6rem] mb-3";
+  const center = "flex flex-col justify-center items-center mb-5";
   const rounded = "rounded-full border-2 border-gray-500";
+  const devName = "font-bold text-azure mb-2 text-xl";
+  const devPos = "text-center text-sm max-md:text-center";
   return (
     <>
-      <div className="py-10">
+      <div className="relative z-10 mt-20 flex flex-col gap-y-2 justify-center items-center text-center ">
         <center>
-          <h1 className="font-bold">Meet the Developers</h1>
+          <h1 className="text-4xl font-bold my-5">Meet the Developers</h1>
         </center>
-        <br />
-        <div>
-          <div className={center}>
-            <div className={img}>
-              <img src={Joko} alt="" className={rounded} />
-            </div>
-            <h1 className="font-bold text-azure text-xl">Joko Gadingan</h1>
-            <p>Project Manager / Backend Developer</p>
-          </div>
-          <br />
-          <div className="grid grid-cols-3 max-md:grid-cols-2 gap-5">
+
+                  <div >
+                    <div className={center}>
+                      <div className={img}>
+                        <img src={Joko} alt="" className={rounded} />
+                      </div>
+                      <h2 className={devName}>Joko Gadingan</h2>
+                      <p className={devPos}
+                        >Project Manager / Backend Developer</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-3 max-md:grid-cols-2 gap-5">
             <div className={center}>
               <div className={img}>
                 <img src={Lei} alt="" className={rounded} />
               </div>
-              <h1 className="font-bold text-azure text-xl">
-                Louise Angelo Ocopio
-              </h1>
-              <p>Lead Frontend Developer</p>
+              <h2 className={devName}>Louise Angelo Ocopio</h2>
+              <p className={devPos}>Lead Frontend Developer</p>
             </div>
             <div className={center}>
               <div className={img}>
                 <img src={Kadu} alt="" className={rounded} />
               </div>
-              <h1 className="font-bold text-azure text-xl">Evehn Kadusale</h1>
-              <p>Lead AI Developer</p>
+              <h2 className={devName}>Evehn Kadusale</h2>
+              <p className={devPos}>Lead AI Developer</p>
             </div>
             <div className={center}>
               <div className={img}>
                 <img src={Even} alt="" className={rounded} />
               </div>
-              <h1 className="font-bold text-azure text-xl">
-                Evenezer Francis Basan
-              </h1>
-              <p>Frontend Developer/AI Prompt Engineer</p>
+              <h2 className={devName}>Evenezer Francis Basan</h2>
+              <p className={devPos}>Frontend Developer / AI Prompt Engineer</p>
             </div>
             <div className={center}>
               <div className={img}>
                 <img src={Nikol} alt="" className={rounded} />
               </div>
-              <h1 className="font-bold text-azure text-xl">
-                Nicole Del Carmen
-              </h1>
-              <p>Frontend Developer/AI Prompt Engineer</p>
+              <h2 className={devName}>Nicole Del Carmen</h2>
+              <p className={devPos}>Frontend Developer / AI Prompt Engineer</p>
             </div>
             <div className={center}>
               <div className={img}>
                 <img src={Marot} alt="" className={rounded} />
               </div>
-              <h1 className="font-bold text-azure text-xl">
-                Mary Rose Crisostomo
-              </h1>
-              <p>Frontend Developer/AI Prompt Engineer</p>
+              <h2 className={devName}>Mary Rose Crisostomo</h2>
+              <p className={devPos}>Frontend Developer / AI Prompt Engineer</p>
             </div>
             <div className={center}>
               <div className={img}>
                 <img src={Leonard} alt="" className={rounded} />
               </div>
-              <h1 className="font-bold text-azure text-xl">
-                John Leonard Leano
-              </h1>
-              <p>UI/UX Designer/AI Prompt Engineer</p>
+              <h2 className={devName}>John Leonard Leano</h2>
+              <p className={devPos}>UI/UX Designer / AI Prompt Engineer</p>
             </div>
           </div>
         </div>

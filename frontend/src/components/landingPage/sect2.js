@@ -5,8 +5,8 @@ function sect2() {
   return (
     <div
       className="bg-gray-100
-      h-screen
-      flex flex-row justify-around items-center px-[14rem]
+      rounded-lg
+      flex flex-row justify-around items-center px-[3rem]
       max-md:flex-col
       max-md:px-2
       "
@@ -15,18 +15,19 @@ function sect2() {
         <img
           src={sec2}
           alt="law "
-          className="flex-shrink-0 resize-none w-[20rem] bg-cover"
+          className="flex-shrink-0 resize-none w-[15rem] h-[15rem] rounded-full my-8"
         />
       </div>
       <div className="px-5 max-md:hidden">{/* Just to give them space*/}</div>
       <div className="p-0">
-        <h1 className="font-bold mb-6 max-md:text-center">
-          About <span className="text-azure">GabAi</span>
+        <h1 className=" text-4xl font-bold mb-4 max-md:text-center">
+          About 
+          <span className="text-white pl-2 pr-2.5 text-3xl font-medium bg-azure ml-2 rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl">
+            GabAi</span>
         </h1>
-        <br />
+        
         <p
-          className="text-justify
-        leading-loose
+          className="text-justify text-1xl
         max-md:text-center"
         >
           Welcome to GabAi, your go-to web application for comprehensive legal

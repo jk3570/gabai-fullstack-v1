@@ -31,7 +31,7 @@ const Login = ({ login }) => {
   return (
     <Popup
       trigger={
-        <button className="border-2 rounded-xl p-4 py-1.5 border-azure-500 text-azure-500">
+        <button className="border-2 rounded-xl p-4 py-1.5 border-azure-500 text-azure-500 hover:scale-[1.1] transition-all duration-200 ease-in-out">
           Log in
         </button>
       }
