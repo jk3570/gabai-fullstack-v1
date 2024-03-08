@@ -37,14 +37,13 @@ const Faq = () => {
     // Add more FAQ items here
   ];
 
-  const box = "border-2 border-azure-500 p-3 rounded-xl my-3";
+  const box = "border-2 border-azure-500 p-3 rounded-xl my-1";
 
   return (
-    <div className="relative z-10 h-auto my-2">
+    <div className="relative z-10 mt-20 flex flex-col gap-y-2 justify-center items-center">
       <center>
-        <h1 className="font-bold">Frequently Asked Questions</h1>
+        <h1 className="text-4xl font-bold my-5">FAQs</h1>
       </center>
-      <br />
       {faqs.map((faq, index) => (
         <div key={index} className={box}>
           <div onClick={() => toggleDesc(index)}>
