@@ -106,7 +106,7 @@ const PieChartComponent = React.memo(() => (
 
 function Sex() {
   return (
-    <div className="flex flex-row gap-1 items-center justify-center w-auto h-100 text-azure">
+    <div className="flex flex-row gap-1 items-center justify-center h-100 text-azure">
       <div>
         {/* Bar Graph */}
         <MyBarGraph />
