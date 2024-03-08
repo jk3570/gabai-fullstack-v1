@@ -8,8 +8,34 @@ import {
 } from "select-philippines-address";
 import { useSignup } from "../hooks/useSignup";
 import Popup from "reactjs-popup";
-
+import toast, { Toaster } from 'react-hot-toast';
 import { IoIosCloseCircleOutline, IoMdEye, IoMdEyeOff } from "react-icons/io";
+
+// Define the saveSettings function
+const saveSettings = (settings) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // Simulate saving settings for 3 seconds
+      // After 3 seconds, resolve the promise to indicate success
+      resolve();
+    }, 1000); // 3000 milliseconds = 3 seconds
+  });
+};
+
+// Define the notify function
+const notify = (settings) => toast.promise(
+  saveSettings(settings), // Pass settings as an argument to saveSettings
+   {
+     loading: 'Creating an account...',
+     success: <b>Account has been created successfully!</b>,
+     error: <b>Creating failed.</b>,
+   }
+ );
+
+
+const notifyErr = () => toast.error('Pag manyakis nagclick lalabas to!', {
+  position: "top-center"
+})
 
 const Signup = ({ initialAddress }) => {
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -183,6 +209,8 @@ const Signup = ({ initialAddress }) => {
     );
   };
 
+  
+
   return (
     <Popup
       trigger={
@@ -217,6 +245,24 @@ const Signup = ({ initialAddress }) => {
                     <b className="flex flex-col items-center justify-center text-xl">
                       Personal Information 1/3
                     </b>
+                    <div>
+                    <Toaster
+                        position="top-center"
+                      />
+                    </div>
+
+                    <button
+                      type="button"
+                      className="w-full bg-azure-500 text-white font-bold rounded-xl p-2 "
+                      onClick={notify}
+                    > Error dapat to!</button>
+                                        <button
+                      type="button"
+                      className="w-full bg-azure-500 text-white font-bold rounded-xl p-2 "
+                      onClick={notifyErr}
+                    > Ito success!</button>
+
+
                     <label htmlFor="firstname">First Name</label>
                     <input
                       type="text"
@@ -649,6 +695,7 @@ const Signup = ({ initialAddress }) => {
 
                     <button
                       type="submit"
+                      onClick={!errors ? notify : undefined}
                       className="w-full bg-azure-500 text-white font-bold rounded-xl p-2"
                       disabled={error || isLoading || passwordMatchError}
                     >

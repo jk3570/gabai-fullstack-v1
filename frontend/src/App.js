@@ -33,8 +33,10 @@ import SignedIn from "./pages/signedIn/landingPage";
 const App = () => {
   return (
     <BrowserRouter>
-      <NavbarOrSignedInNavbar />
+      <Navbar />
       <Routes>
+
+        {/* Landing Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -43,12 +45,11 @@ const App = () => {
         <Route path="ToC" element={<Terms />} />
 
         {/* Admin Routes */}
-        <Route path="/admin" element={<NotAdmin />} />
-        <Route path="/signed-in/admin" element={<Admin />} />
-        <Route path="/signed-in/admin/users" element={<UserList />} />
-        <Route path="/signed-in/admin/cases" element={<CasesList />} />
-        <Route path="/signed-in/admin/feedbacks" element={<FeedbacksList />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/users" element={<UserList />} />
+        <Route path="/admin/cases" element={<CasesList />} />
+        <Route path="/admin/feedbacks" element={<FeedbacksList />} />
+        {/* <Route path="/chat" element={<Chat />} /> */}
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/signed-in" element={<SignedIn />} />
@@ -62,23 +63,23 @@ const App = () => {
   );
 };
 
-const NavbarOrSignedInNavbar = () => {
-  const location = useLocation();
+// const NavbarOrSignedInNavbar = () => {
+//   const location = useLocation();
 
-  // Check if the current route is '/signed-in', then render SignedInNavbar, otherwise render Navbar
-  if (
-    location.pathname === "/signed-in" ||
-    location.pathname === "/signed-in/admin" ||
-    location.pathname === "/signed-in/admin/users" ||
-    location.pathname === "/signed-in/admin/cases" ||
-    location.pathname === "/signed-in/admin/feedbacks" ||
-    location.pathname === "/signed-in/chat" ||
-    location.pathname === "/signed-in/search"
-  ) {
-    return <SignedInNavbar />;
-  } else {
-    return <Navbar />;
-  }
-};
+//   // Check if the current route is '/signed-in', then render SignedInNavbar, otherwise render Navbar
+//   if (
+//     location.pathname === "/signed-in" ||
+//     location.pathname === "/signed-in/admin" ||
+//     location.pathname === "/signed-in/admin/users" ||
+//     location.pathname === "/signed-in/admin/cases" ||
+//     location.pathname === "/signed-in/admin/feedbacks" ||
+//     location.pathname === "/signed-in/chat" ||
+//     location.pathname === "/signed-in/search"
+//   ) {
+//     return <SignedInNavbar />;
+//   } else {
+//     return <Navbar />;
+//   }
+// };
 
 export default App;
