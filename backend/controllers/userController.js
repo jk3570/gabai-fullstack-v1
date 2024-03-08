@@ -2,6 +2,8 @@ const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 
 const createToken = (_id) => {
+  //Create a token using the ID provided
+  //Expires in one day
   return jwt.sign({_id}, process.env.SECRET, { expiresIn: '1d' });
 };
 
@@ -11,11 +13,13 @@ const loginUser = async (req, res) => {
 
   try {
     console.log('Login Request Body:', req.body); // Log the request body
-    const user = await User.login(identifier, password);
+    const user = await User.login(identifier, password); // Get the user from the model > db 
 
     // Create a token
+    // Get the user id from the model and pass it as argument to the createToken function
     const token = createToken(user._id);
 
+    //response on local storage
     res.status(200).json({ email: user.email, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -62,6 +66,7 @@ const signupUser = async (req, res) => {
     // Create a token
     const token = createToken(user._id);
 
+    //response on local storage
     res.status(200).json({ email: user.email, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
