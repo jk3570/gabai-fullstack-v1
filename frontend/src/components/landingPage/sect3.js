@@ -36,7 +36,7 @@ function sect3() {
             />
           </div>
           <h2 className={cardTitle}>
-            <b>Conversation AI</b>
+            <b>Conversational AI</b>
           </h2>
           <p className={cardDetail}>
             {" "}
@@ -56,7 +56,7 @@ function sect3() {
             />
           </div>
           <h2 className={cardTitle}>
-            <b>Search Engine</b>
+            <b>Web Search Engine</b>
           </h2>
           <p className={cardDetail}>
             You can look up information about 

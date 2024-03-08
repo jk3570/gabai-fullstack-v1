@@ -83,10 +83,16 @@ function Header() {
                     <a href="#home">Home</a>
                   </li>
                   <li className="hover:scale-[1.1] transition-all duration-200 ease-in-out">
-                    <Link to="/chat">Chat</Link>
+                  <a href="#about">About</a>
                   </li>
                   <li className="hover:scale-[1.1] transition-all duration-200 ease-in-out">
-                    <a href="#about">About</a>
+                  <a href="#about">Features</a>
+                  </li>
+                  <li className="hover:scale-[1.1] transition-all duration-200 ease-in-out">
+                  <a href="#about">Team</a>
+                  </li>
+                  <li className="hover:scale-[1.1] transition-all duration-200 ease-in-out">
+                  <a href="#about">FAQs</a>
                   </li>
                 </nav>
               </div>

@@ -25,6 +25,7 @@ const notify = (settings) => toast.promise(
      loading: 'Creating an account...',
      success: <b>Account has been created successfully!</b>,
      error: <b>Creating failed.</b>,
+
    }
  );
 
@@ -183,7 +184,7 @@ const Signup = ( {initialAddress }) => {
 
   return (
     <Popup
-      trigger={<a href="#" className="text-azure">Sign up here</a>}
+      trigger={<a href="#" className="text-azure">Login in here</a>}
       modal
       nested
     >

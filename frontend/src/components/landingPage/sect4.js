@@ -1,4 +1,5 @@
 import React from "react";
+import Signup from "../signup";
 
 const CallToAction = () => {
   return (
@@ -23,9 +24,12 @@ const CallToAction = () => {
           GabAi helps you and the many others to shout their voices and be
           heard!
         </p>
-        <button className="bg-azure hover:bg-blue-700 text-white font-bold p-3.5 rounded-lg  h-55 w-[15rem]">
-          Join now!
-        </button>
+
+          <button className="hover:scale-[1.1] transition-all duration-200 ease-in-out bg-azure text-white font-bold p-3.5 rounded-lg  h-55 w-[15rem]">
+            Join now!  
+          </button>
+
+
       </div>
     </div>
   );

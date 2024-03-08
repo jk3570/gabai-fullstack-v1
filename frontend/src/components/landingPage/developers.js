@@ -16,7 +16,7 @@ const Developers = () => {
     <>
       <div className="relative z-10 mt-20 flex flex-col gap-y-2 justify-center items-center text-center ">
         <center>
-          <h1 className="text-4xl font-bold my-5">Meet the Developers</h1>
+          <h1 className="text-4xl font-bold my-5">Team <span className="text-azure">PARAGON</span></h1>
         </center>
 
                   <div >

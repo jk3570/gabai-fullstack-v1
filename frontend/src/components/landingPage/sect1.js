@@ -74,12 +74,14 @@ const WorkplaceDiscriminationLaws = () => {
           <div className="flex max-md:justify-center">
             
             <div className="group h-25 w-60">
-            
-              <button
-                className={button}
+             <a href="/chat">
+              <button                
+              className={button}
               >
                 Talk with Gab! 
+             
               </button>
+              </a>
               <span className="absolute z-10 left-6 translate-y-8 w-6 h-6 bg-azure rotate-45"></span>
             </div>
             
