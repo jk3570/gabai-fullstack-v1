@@ -4,12 +4,13 @@ import Helmet from "react-helmet";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // Components
-import Sect1 from "../components/landingPage/sect1";
-import Sect2 from "../components/landingPage/sect2";
-import Sect3 from "../components/landingPage/sect3";
-import Sect4 from "../components/landingPage/sect4";
-import Developers from "../components/landingPage/developers";
-import FAQ from "../components/landingPage/faq";
+import Section1 from "../components/landingpage/Section1";
+import Section2 from "../components/landingpage/Section2";
+import Section3 from "../components/landingpage/Section3";
+import Section4 from "../components/landingpage/Section4";
+import Developers from "../components/landingpage/Developers";
+import Faq from "../components/landingpage/Faq";
+import { FaQq } from "react-icons/fa6";
 
 function LandingPage() {
   const { user, dispatch } = useAuthContext();
@@ -29,17 +30,17 @@ function LandingPage() {
       <div class="w-full relative max-w-4xl px-5 lg:px-0 center mx-auto">
         <section id="home">
           {/* 1st section of landing page */}
-          <Sect1 />
+          <Section1 />
         </section>
 
         <section id="about">
           {/* 2nd section of landing page */}
-          <Sect2 />
+          <Section2 />
         </section>
 
         <section>
           {/* 3rd section of landing page */}
-          <Sect3 />
+          <Section3 />
         </section>
 
         <section>
@@ -49,12 +50,12 @@ function LandingPage() {
 
         <section>
           {/* 5th section of landing page */}
-          <FAQ />
+          <Faq />
         </section>
 
         <section>
           {/* 4th section of landing page */}
-          <Sect4 />
+          <Section4 />
         </section>
       </div>
       {/* 

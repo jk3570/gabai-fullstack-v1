@@ -11,16 +11,14 @@ import { BsMoon } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 
 // Components
-// import SignIn from "./SignIn";
-import SideNav from "./SideNav";
-import Login from "./login";
+import Login from "./Login";
 
 const toggle = () => {
   var element = document.body;
   element.classList.toggle("dark-mode");
 };
 
-function Header() {
+function Navbar() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -106,6 +104,9 @@ function Header() {
             </Link>
 
             {/* Toggle night mode */}
+            
+
+
             <BsMoon className="text-2xl hover:scale-[1.1] transition-all duration-200 ease-in-out" onClick={toggle} />
           </div>
         </div>
@@ -114,4 +115,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;

@@ -1,19 +1,17 @@
 import React from "react";
 
 //Components
-
-import AdminSidebar from "../../../components/admin/sidebar";
-import AddAccount from "../../../components/admin/addNewAccount";
+import AdminSidebar from "../../components/admin/Sidebar";
+import AddNewAccount from "../../components/admin/AddNewAccount";
 
 //SVGs
-
 import { MdEdit } from "react-icons/md";
 import { FaBoxArchive } from "react-icons/fa6";
 
 const addUserStyle =
   "flex flex-row justify-center items-center gap-2 p-2 bg-azure-300 rounded-xl text-white hover:bg-azure-400 hover:scale-110 transition-all duration-300";
 
-const userList = [
+const list = [
   {
     id: 1,
     name: "Olivia Rodriguez",
@@ -56,7 +54,7 @@ function UserList() {
                 </tr>
               </thead>
               <tbody>
-                {userList.map((user) => (
+                {list.map((user) => (
                   <tr
                     key={user.id}
                     className="border-b last:border-b-0 border-gray-200"
@@ -81,7 +79,7 @@ function UserList() {
         </div>
         <div className="flex flex-col">
           <div className="flex justify-center items-center mt-6">
-            <AddAccount />
+            <AddNewAccount />
           </div>
         </div>
       </div>

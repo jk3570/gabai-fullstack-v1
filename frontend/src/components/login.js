@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import Signup from "./signup";
+import Signup from "./Signup";
 import { useLogin } from "../hooks/useLogin";
 
 const Login = () => {

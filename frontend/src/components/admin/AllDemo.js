@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import SexDemog from "./sexDemog";
-import LocationDemog from "./locationDemog";
-import AgeDemog from "./ageDemog";
+import GenderDemo from "./GenderDemo";
+import LocationDemo from "./LocationDemo";
+import AgeDemo from "./AgeDemo";
 
-function UserDemographics() {
-  const [currentPage, setCurrentPage] = useState("sex"); // Default page
+function AllDemo() {
+  const [currentPage, setCurrentPage] = useState("gender"); // Default page
 
   const handleClick = (page) => {
     setCurrentPage(page);
@@ -17,9 +17,9 @@ function UserDemographics() {
           <ul className="flex flex-row justify-between gap-1 items-start text-white">
             <li
               className="border-2 w-full border-white p-1 rounded-xl cursor-pointer active:bg-azure-400 focus:bg-azure-400"
-              onClick={() => handleClick("sex")}
+              onClick={() => handleClick("gender")}
             >
-              Sex
+              Gender
             </li>
             <li
               className="border-2 w-full border-white p-1 rounded-xl cursor-pointer active:bg-azure-400 focus:bg-azure-400"
@@ -40,13 +40,13 @@ function UserDemographics() {
 
         {/* TODO: Graph */}
         <div id="center" className="flex flex-col w-full p-1 my-4 ">
-          {currentPage === "sex" && <SexDemog />}
-          {currentPage === "location" && <LocationDemog />}
-          {currentPage === "age" && <AgeDemog />}
+          {currentPage === "gender" && <GenderDemo />}
+          {currentPage === "location" && <LocationDemo />}
+          {currentPage === "age" && <AgeDemo />}
         </div>
       </div>
     </div>
   );
 }
 
-export default UserDemographics;
+export default AllDemo;

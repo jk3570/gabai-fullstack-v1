@@ -1,85 +1,66 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./css/App.css";
 import "animate.css";
 
-import Navbar from "./components/navbar";
-import SignedInNavbar from "./components/signedIn/signedin-navbar";
-import Footer from "./components/footer";
-import Home from "./pages/landingPage";
+//Components routes
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Terms from "./components/Terms";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Chat from "./components/Chat";
+import Profile from "./components/Profile";
+import PageNotFound from "./components/PageNotFound";
 
-import Login from "./components/login";
-import Signup from "./components/signup";
-import Search from "./pages/search/search";
-import Results from "./pages/search/results";
-import Terms from "./components/terms";
-import Admin from "./pages/admin/signedIn/dashboard";
-import NotAdmin from "./pages/admin/dashboard";
-import UserList from "./pages/admin/signedIn/users";
-import CasesList from "./pages/admin/signedIn/cases";
-import FeedbacksList from "./pages/admin/signedIn/feedbacks";
-import Chat from "./pages/chat/chat";
-import Testing from "./pages/testing/testing";
-import Profile from "./components/profile";
-import SignedIn from "./pages/signedIn/landingPage";
+//Landing route
+import LandingPage from "./pages/LandingPage";
+
+//Search routes
+import SearchResults from "./pages/search/SearchResults";
+import Search from "./pages/search/Search";
+
+//Admin routes
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import UserList from "./pages/admin/UserList";
+import CasesList from "./pages/admin/CasesList";
+import FeedbacksList from "./pages/admin/FeedbackList";
 
 const App = () => {
+
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
-      <Routes>
+        <Routes>
 
-        {/* Landing Routes and User */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/searchResults" element={<Results />} />
-        <Route path="ToC" element={<Terms />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/profile" element={<Profile />} />
+          {/* Landing route */}
+          <Route path="/" element={<LandingPage />} />
 
-        {/* Admin Routes */}
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/users" element={<UserList />} />
-        <Route path="/admin/cases" element={<CasesList />} />
-        <Route path="/admin/feedbacks" element={<FeedbacksList />} />
-        {/* <Route path="/chat" element={<Chat />} /> */}
+          {/* Search routes */}
+          <Route path="/search" element={<Search />}/>
+          <Route path="search/result" element={<SearchResults />} />
+          
+          {/* Components routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/terms" element={<Terms />} />
 
-        {/* <Route path="/signed-in" element={<SignedIn />} /> */}
-        {/* <Route path="/search" element={<Search />} /> */}
-        <Route path="/testing" element={<Testing />} />
+          {/* Admin routes */}
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/users" element={<UserList />} />
+          <Route path="/admin/cases" element={<CasesList />} />
+          <Route path="/admin/feedbacks" element={<FeedbacksList />} />
 
-      </Routes>
+          {/* 404 route */}
+          <Route path="*" element={<PageNotFound />} />
+
+        </Routes>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 };
-
-// const NavbarOrSignedInNavbar = () => {
-//   const location = useLocation();
-
-//   // Check if the current route is '/signed-in', then render SignedInNavbar, otherwise render Navbar
-//   if (
-//     location.pathname === "/signed-in" ||
-//     location.pathname === "/signed-in/admin" ||
-//     location.pathname === "/signed-in/admin/users" ||
-//     location.pathname === "/signed-in/admin/cases" ||
-//     location.pathname === "/signed-in/admin/feedbacks" ||
-//     location.pathname === "/signed-in/chat" ||
-//     location.pathname === "/signed-in/search"
-//   ) {
-//     return <SignedInNavbar />;
-//   } else {
-//     return <Navbar />;
-//   }
-// };
 
 export default App;

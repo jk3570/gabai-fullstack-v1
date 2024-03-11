@@ -7,7 +7,7 @@ import Search from "../../img/SearchIcon.png";
 import PWA from "../../img/PhoneDesktop.png";
 import Convo from "../../img/Message.png";
 
-function sect3() {
+function Section3() {
   const card =
     "w-[32%] h-[15rem] flex flex-col justify-center items-center landing-section shadow-lg bg-gray-100 rounded-lg transition-transform transform-gpu";
   const cardIcon =
@@ -88,4 +88,4 @@ function sect3() {
   );
 }
 
-export default sect3;
+export default Section3;

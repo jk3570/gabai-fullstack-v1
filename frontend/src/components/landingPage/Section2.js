@@ -1,7 +1,7 @@
 //import sec2 from "./img/sec2.png";
 import sec2 from "../../img/sec2.jpg";
 
-function sect2() {
+function Section2() {
   return (
     <div
       className="relative z-10  bg-gray-100
@@ -40,4 +40,4 @@ function sect2() {
   );
 }
 
-export default sect2; 
+export default Section2; 

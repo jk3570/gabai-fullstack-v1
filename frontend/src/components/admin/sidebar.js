@@ -44,7 +44,7 @@ function Sidebar() {
           <nav className="flex flex-col gap-10 list-none items-start text-white p-3">
             <li>
               <Link
-                to="/signed-in/admin"
+                to="/admin"
                 className="flex flex-row gap-2 text-2xl"
               >
                 <RxDashboard className="text-3xl" />
@@ -53,7 +53,7 @@ function Sidebar() {
             </li>
             <li>
               <Link
-                to="/signed-in/admin/users"
+                to="/admin/users"
                 className="flex flex-row gap-2 text-2xl"
               >
                 <FaUsers className="text-3xl" />
@@ -63,7 +63,7 @@ function Sidebar() {
 
             <li>
               <Link
-                to="/signed-in/admin/cases"
+                to="/admin/cases"
                 className="flex flex-row gap-2 text-2xl"
               >
                 <LiaBalanceScaleSolid className="text-3xl" />
@@ -73,7 +73,7 @@ function Sidebar() {
 
             <li>
               <Link
-                to="/signed-in/admin/feedbacks"
+                to="admin/feedbacks"
                 className="flex flex-row gap-2 text-2xl"
               >
                 <VscFeedback className="text-3xl" />

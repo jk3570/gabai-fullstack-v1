@@ -3,14 +3,14 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 //components and pages
-import AdminSidebar from "../../../components/admin/sidebar";
-import UserDemographics from "../../../components/admin/demographics";
-import AdminCounter from "../../../components/admin/counter";
+import Sidebar from "../../components/admin/Sidebar";
+import AllDemo from "../../components/admin/AllDemo";
+import TotalList from "../../components/admin/TotalList";
 
 //icon sets
 
 //CSS
-import "../../../css/admin-dashboard.css";
+import "../../css/admin-dashboard.css";
 
 const totalNoStyle =
   "flex flex-row border-2 rounded-xl h-[8rem] w-[20rem] p-3 justify-between items-center border-black";
@@ -30,7 +30,7 @@ function AdminDashboard() {
 
       <div className="flex flex-row h-screen">
         <div>
-          <AdminSidebar />
+          <Sidebar />
         </div>
 
         <div id="main-content" className="flex flex-col w-full">
@@ -41,11 +41,11 @@ function AdminDashboard() {
 
           {/* Shows the Number of Users, Cases, etc. */}
 
-          <AdminCounter />
+          <TotalList />
 
           <br />
           <div className=" max-w-4xl flex justify-center self-center mx-auto">
-            <UserDemographics />
+            <AllDemo />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Component
-import AdminSidebar from "../../../components/admin/sidebar";
+import Sidebar from "../../components/admin/Sidebar";
 
 import { FaBoxArchive } from "react-icons/fa6";
 
@@ -24,7 +24,7 @@ const formatNumber = (num) =>
 function CasesList() {
   return (
     <div className="bg-gray-200 h-screen flex flex-row">
-      <AdminSidebar />
+      <Sidebar />
       <div className="flex flex-col w-full">
         <div className="p-4">
           <div className="flex justify-between items-center mt-6">
@@ -68,4 +68,5 @@ function CasesList() {
   );
 }
 
-export default CasesList;
+export default CasesList
+;
