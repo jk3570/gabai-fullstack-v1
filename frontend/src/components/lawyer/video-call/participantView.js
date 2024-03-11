@@ -4,8 +4,9 @@ import ReactPlayer from "react-player";
 
 function ParticipantView(props) {
   const micRef = useRef(null);
-  const { webcamStream, micStream, webcamOn, micOn, isLocal, name } =
-    useParticipant(props.participantId);
+  const { webcamStream, micStream, webcamOn, micOn, isLocal } = useParticipant(
+    props.participantId
+  );
 
   const videoStream = useMemo(() => {
     if (webcamOn && webcamStream) {
@@ -51,8 +52,8 @@ function ParticipantView(props) {
           //
           url={videoStream}
           //
-          height={"300px"}
-          width={"300px"}
+          height={"100%"}
+          width={"720px"}
           onError={(err) => {
             console.log(err, "participant video error");
           }}

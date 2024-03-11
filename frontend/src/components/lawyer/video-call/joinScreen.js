@@ -1,25 +1,35 @@
 import React, { useState } from "react";
 
+const btnStyle = "p-2 rounded-xl bg-azure text-white";
+
+const inputStyle = "border-2 rounded-xl p-2 w-[20rem]";
+
 function JoinScreen({ getMeetingAndToken }) {
   const [meetingId, setMeetingId] = useState(null);
-  const [name, setDisplayName] = useState("");
 
   const onClick = async () => {
     await getMeetingAndToken(meetingId);
   };
 
   return (
-    <div>
+    <div className="flex flex-row gap-2 items-center justify-center">
       <input
         type="text"
+        className={inputStyle}
         placeholder="Enter Meeting Id"
         onChange={(e) => {
           setMeetingId(e.target.value);
         }}
       />
-      <button onClick={onClick}>Join</button>
-      {" or "}
-      <button onClick={onClick}>Create Meeting</button>
+      <div>
+        <button onClick={onClick} className={btnStyle}>
+          Join
+        </button>
+        {" or "}
+        <button onClick={onClick} className={btnStyle}>
+          Create Meeting
+        </button>
+      </div>
     </div>
   );
 }

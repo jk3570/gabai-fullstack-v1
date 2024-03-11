@@ -4,7 +4,7 @@ import MeetingView from "../../components/lawyer/video-call/meetingView";
 import { MeetingProvider } from "@videosdk.live/react-sdk";
 import { authToken, createMeeting } from "../../API";
 
-function App() {
+function VideoCon() {
   const [meetingId, setMeetingId] = useState(null);
 
   const getMeetingAndToken = async (id) => {
@@ -32,5 +32,13 @@ function App() {
     <JoinScreen getMeetingAndToken={getMeetingAndToken} />
   );
 }
+
+const App = () => {
+  return (
+    <div className="App py-20">
+      <VideoCon />
+    </div>
+  );
+};
 
 export default App;
