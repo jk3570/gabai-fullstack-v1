@@ -29,13 +29,13 @@ import Chat from "./pages/chat/chat";
 import Testing from "./pages/testing/testing";
 import Profile from "./components/profile";
 import SignedIn from "./pages/signedIn/landingPage";
+import Lawyer from "./pages/lawyer/lawyer";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-
         {/* Landing Routes and User */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -45,6 +45,9 @@ const App = () => {
         <Route path="ToC" element={<Terms />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/profile" element={<Profile />} />
+
+        {/* Lawyer Routes */}
+        <Route path="/lawyer" element={<Lawyer />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />} />
@@ -56,7 +59,6 @@ const App = () => {
         {/* <Route path="/signed-in" element={<SignedIn />} /> */}
         {/* <Route path="/search" element={<Search />} /> */}
         <Route path="/testing" element={<Testing />} />
-
       </Routes>
       <Footer />
     </BrowserRouter>
