@@ -184,7 +184,7 @@ const Signup = ( {initialAddress }) => {
 
   return (
     <Popup
-      trigger={<a href="#" className="text-azure">Sign up here</a>}
+      trigger={<a href="#" className="text-azure">Login in here</a>}
       modal
       nested
     >

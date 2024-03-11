@@ -94,6 +94,7 @@ userSchema.statics.signup = async function(username,
 
   //hashing all the users data
   const passwordHash = await bcrypt.hash(password, salt)
+  const emailHash = await bcrypt.hash(email, salt)
 
   // Inserting data to database
   const user = await this.create({ 
@@ -106,7 +107,7 @@ userSchema.statics.signup = async function(username,
     province,
     city,
     barangay,
-    email,
+    emailHash,
     password: passwordHash })
 
   return user

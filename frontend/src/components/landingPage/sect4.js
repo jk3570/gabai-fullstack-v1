@@ -1,7 +1,7 @@
 import React from "react";
+import Signup from "../signup";
 
-
-const Section4 = () => {
+const CallToAction = () => {
   return (
     <div className="relative z-10 bg-gray-100
     rounded-lg mt-20 
@@ -35,4 +35,4 @@ const Section4 = () => {
   );
 };
 
-export default Section4;
+export default CallToAction;
